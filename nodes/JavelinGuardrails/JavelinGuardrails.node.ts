@@ -5,13 +5,13 @@ import type {
 	INodeTypeDescription,
 } from 'n8n-workflow';
 
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
 
 export class JavelinGuardrails implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Javelin Guardrails',
 		name: 'javelinGuardrails',
-		icon: 'fa:shield-alt',
+		icon: 'file:javelin.svg',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"]}}',
@@ -112,14 +112,15 @@ export class JavelinGuardrails implements INodeType {
 					);
 
 					// Check if any assessment has request_reject: true
-					const hasRejection = response.assessments?.some((assessment: any) => {
-						return Object.values(assessment).some((filter: any) =>
-							filter.request_reject === true
-						);
+					const hasRejection = response.assessments?.some((assessment: Record<string, unknown>) => {
+						return Object.values(assessment).some((filter: unknown) => {
+							const filterObj = filter as Record<string, unknown>;
+							return filterObj.request_reject === true;
+						});
 					});
 
 					if (hasRejection) {
-						throw new Error('Request rejected by Javelin Guardrails: Content failed security assessment');
+						throw new NodeOperationError(this.getNode(), 'Request rejected by Javelin Guardrails: Content failed security assessment');
 					}
 
 					returnData.push({

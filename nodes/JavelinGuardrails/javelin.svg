@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="12" fill="#7262F6"/>
+  <path d="M20 20h24a8 8 0 0 1 8 8v8a8 8 0 0 1-8 8H20a8 8 0 0 1-8-8V28a8 8 0 0 1 8-8z" fill="white"/>
+  <path d="M16 32L32 16l16 16L32 48 16 32z" fill="#7262F6" opacity="0.2"/>
+  <circle cx="32" cy="32" r="6" fill="white"/>
+  <text x="32" y="36" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="#7262F6">J</text>
+</svg>

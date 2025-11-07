@@ -11,7 +11,7 @@ export class JavelinGuardrailsApi implements ICredentialType {
 
 	displayName = 'Javelin Guardrails API';
 
-	icon: Icon = 'fa:shield-alt';
+	icon: Icon = 'file:javelin.svg';
 
 	documentationUrl = 'https://docs.getjavelin.io/';
 

@@ -1,15 +1,15 @@
 {
     "name": "n8n-nodes-javelin",
     "version": "0.1.0",
-    "description": "",
+    "description": "Javelin node provides AI safety and content moderation services with support for prompt injection detection, trust & safety violations, sensitive data loss protection, language detection and other guardrails",
     "license": "MIT",
     "homepage": "",
     "keywords": [
         "n8n-community-node-package"
     ],
     "author": {
-        "name": "",
-        "email": ""
+        "name": "Abhijit",
+        "email": "abhijit.hema@getjavelin.io"
     },
     "repository": {
         "type": "git",
